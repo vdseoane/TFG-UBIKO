@@ -25,6 +25,7 @@ INSERT INTO `localizacion` (`idLocalizacion`, `numeroPlanta`, `nombreLocalizacio
 ('ALTA', NULL, 'Alta'),
 ('BOX', 1, 'BOX'),
 ('ECO', 2, 'Ecografia'),
+('ING', NULL, 'Ingreso'),
 ('EXITUS', NULL, 'Exitus'),
 ('QUI', 4, 'Quirofano'),
 ('RX', -2, 'Rayos X'),
