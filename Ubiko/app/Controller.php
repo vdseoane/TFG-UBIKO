@@ -15,8 +15,7 @@
         //session_start();
         session_start();
         $this->model = new Model(Config::$mvc_bd_nombre, Config::$mvc_bd_usuario,
-            Config::$mvc_bd_clave, Config::$mvc_bd_hostname);  
-        //echo "<script type=\"text/javascript\">alert(\"$this->usuario\");</script>";
+            Config::$mvc_bd_clave, Config::$mvc_bd_hostname);   
     }
 
     //Carga la plantilla del log in (inicio.php)
@@ -61,9 +60,10 @@
                 $anotaciones = $_POST['anotaciones'];
                 $resultado1 = $this->model->buscarPacienteNhc($nhc);
                 if($resultado1->num_rows >0){
-                    echo "<script type=\"text/javascript\">alert(\"El paciente ya existe\");</script>";
+                    
                     $_SESSION['nhcPaciente'] = $nhc;
-                    header('Location: index.php?ctl=seguimiento');
+                    echo "<script type=\"text/javascript\">alert(\"El paciente ya existe\");</script>";
+                    $this->seguimiento();
                 }else{
                     $resultado = $this->model->insertarPaciente($nombre, $apellidos, $telefono, $direccion, $nhc, $anotaciones);
                     $_SESSION["nombrePaciente"]=$nombre;

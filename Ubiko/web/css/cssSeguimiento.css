@@ -76,7 +76,7 @@ src: url("../fuentes/digital.ttf") format("truetype");
 #nhcPaciente{
 	position: relative;
 	float: right;
-	width: 83px;
+	width: 100px;
 	height: 38px;
 	margin-right: 15px;
 	border:#F00 0px solid;
